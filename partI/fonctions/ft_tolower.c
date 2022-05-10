@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 15:57:05 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/06 15:57:08 by mvicedo          ###   ########.fr       */
+/*   Created: 2022/05/10 15:26:30 by mvicedo           #+#    #+#             */
+/*   Updated: 2022/05/10 15:26:32 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*The strlen() function calculates the length of the string pointed to by s, excluding the terminating null byte ('\0').*/
-/* size_t est un type non signe, represente des valeurs positives*/
+/* tolower() converts uppercase letter to lowercase.
+It returns the converted letter or c if the conversion was not possible. */
 
-#include <string.h>
+#include <ctype.h>
 #include <stdio.h>
 
-size_t ft_strlen(const char *s)
+int ft_tolower(int c)
 {
-    unsigned int i;
-
-    i = 0;
-    while (s[i])
-        i++;
-    return (i);
+    if (c >= 65 && c <= 90)
+        c += 32;
+    return (c);
 }
 
 int main(void)
 {
-    printf("%ld\n", ft_strlen("ab25"));
-    printf("%ld\n", strlen("ab25"));
-    return (0);
+    printf("%c\n", tolower('A'));
+    printf("%c\n", ft_tolower('A'));
+    return 0;
 }

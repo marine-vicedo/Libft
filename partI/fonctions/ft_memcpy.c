@@ -36,8 +36,8 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 
 int main(void)
 {
-    char    dest[50] = "http://www.tutorialspoint.com";
-    char    src[50] = "Heloooo!!";
+    char    dest[100] = "http://www.tutorialspoint.com";
+    char    src[100] = "Heloooo!!";
 
     printf("Before memcpy dest = %s\n", dest);
     memcpy(dest, src, 8);

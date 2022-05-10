@@ -1,34 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 15:57:05 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/06 15:57:08 by mvicedo          ###   ########.fr       */
+/*   Created: 2022/05/10 15:32:04 by mvicedo           #+#    #+#             */
+/*   Updated: 2022/05/10 15:32:07 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*The strlen() function calculates the length of the string pointed to by s, excluding the terminating null byte ('\0').*/
-/* size_t est un type non signe, represente des valeurs positives*/
+/* Rechercher un caractère dans une chaîne.
+La fonction strchr() renvoie un pointeur sur la première occurrence du caractère c dans la chaîne s. 
+ou NULL si le caractère n'a pas été trouvé. */
 
 #include <string.h>
 #include <stdio.h>
 
-size_t ft_strlen(const char *s)
+char    *ft_strchr(const char *s, int c)
 {
-    unsigned int i;
-
+    unsigned int    i;
+    
     i = 0;
+
     while (s[i])
+    {
+        if(s[i] == c)
+            return ((char *)s + i);
         i++;
-    return (i);
+    }
+    return (NULL);
 }
 
 int main(void)
 {
-    printf("%ld\n", ft_strlen("ab25"));
-    printf("%ld\n", strlen("ab25"));
-    return (0);
+    char    s1[100] = "les chatons";
+    int c = 'a';
+
+    printf("%s\n", strchr(s1, c));
+    printf("%s\n", ft_strchr(s1, c));
+
+    return 0;
 }

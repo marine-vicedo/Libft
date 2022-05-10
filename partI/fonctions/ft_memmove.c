@@ -55,8 +55,8 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 
 int main(void)
 {
-    char    dest[50] = "oldstring";
-    char    src[50] = "newstring";
+    char    dest[100] = "oldstring";
+    char    src[100] = "newstring";
 
     printf("Before memmove dest = %s, src = %s\n", dest, src);
     memmove(dest, src, 8);

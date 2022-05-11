@@ -29,13 +29,13 @@ char    *ft_strchr(const char *s, int c)
             return ((char *)s + i);
         i++;
     }
-    return (NULL);
+    return (0);
 }
 
 int main(void)
 {
     char    s1[100] = "les chatons";
-    int c = 'a';
+    int c = 'c';
 
     printf("%s\n", strchr(s1, c));
     printf("%s\n", ft_strchr(s1, c));

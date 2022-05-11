@@ -19,22 +19,30 @@ ou NULL si le caractère n'a pas été trouvé. */
 
 char    *ft_strrchr(const char *s, int c)
 {
-    unsigned int    i;
-    i = strlen(s);
+    const char *str;
 
-    while (s[i])
+    str = s;
+
+    while (*str)
+        str++;
+    
+    if (c == 0)
+        return ((char *)str);
+
+    while (str > s)
     {
-        if(s[i] == c)
-            return ((char *)s + i);
-        i--;
+        str--;
+        if(*str == c)
+            return ((char *)str);
     }
-    return (NULL);
+    return (0);
 }
+
 
 int main(void)
 {
-    char    s1[100] = "les chatons chat";
-    int c = 'a';
+    char    s1[20] = "les chatons chat";
+    int c = 'c';
 
     printf("%s\n", strrchr(s1, c));
     printf("%s\n", ft_strrchr(s1, c));

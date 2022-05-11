@@ -29,7 +29,8 @@ void *ft_memset(void *s, int c, size_t n)
     //unsigned int i;
     i = 0;
 
-    char *s1 = (char *) s; //cast de *void to *char
+    char *s1;
+    s1 = (char *) s; //cast de *void to *char
 
     while (i < n)
     {

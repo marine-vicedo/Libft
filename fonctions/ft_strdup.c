@@ -19,7 +19,7 @@ La mémoire occupée par cette nouvelle chaîne est obtenue en appelant malloc, 
 
 int	ft_strlen(char *s)
 {
-	int	len;
+	unsigned int	len;
 
 	len = 0;
 	while (s[len])
@@ -29,8 +29,8 @@ int	ft_strlen(char *s)
 
 char	*ft_strdup(const char *s)
 {
-	int	i;
-	int	len;
+	unsigned int	i;
+	unsigned int	len;
 	char	*dest;
 	
 	i = 0;
@@ -46,7 +46,6 @@ char	*ft_strdup(const char *s)
 	}
 	dest[i] = '\0';
 	return (dest);
-    free (dest);
 }
 
 int	main(int argc, char **argv)
@@ -54,6 +53,8 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 		printf("%s\n", ft_strdup(argv[1]));
         printf("%s\n", strdup(argv[1]));
+
+	free (dest)
 	return (0);
 }
 

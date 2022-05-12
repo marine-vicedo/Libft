@@ -15,7 +15,7 @@ La fonction bzero() met à 0 (octets contenant « \0 ») les n premiers octets d
 Ne renvoie aucune valeur.
 */
 
-#include <strings.h>
+#include <string.h>
 #include <stdio.h>
 
 void ft_bzero(void *s, size_t n)

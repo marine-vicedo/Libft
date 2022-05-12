@@ -16,6 +16,7 @@ Les deux zones ne doivent pas se chevaucher. Si c'est le cas, utilisez plutôt m
 La fonction memcpy() renvoie un pointeur sur dest. */
 
 #include <string.h>
+#include <unistd.h>
 #include <stdio.h>
 
 void *ft_memcpy(void *dest, const void *src, size_t n)
@@ -26,7 +27,7 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
     char    *d = (char *) dest;
     const char    *s = (char *) src;
 
-    while ((i < n) & (s[i]))
+    while (i < n)
     {
         d[i] = s[i];
         i++;
@@ -34,17 +35,23 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
     return ((void *) d);
 }
 
+
+/* void print_elements(char *array, int size)
+{
+  int i;
+  printf ("Elements : ");
+  for (i = 0; i < size; i++) {
+    printf ("%c, ", array[i]);
+  }
+  printf (" ");
+}
 int main(void)
 {
-    char    dest[100] = "http://www.tutorialspoint.com";
-    char    src[100] = "Heloooo!!";
+  char c_array[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+  print_elements(c_array, sizeof(c_array));
+  printf("After memcpy()\n");
+  ft_memcpy((void *)&c_array[5], (void *)&c_array[3], 5);
+  print_elements(c_array, sizeof(c_array));
 
-    printf("Before memcpy dest = %s\n", dest);
-    memcpy(dest, src, 8);
-    printf("After memcpy dest = %s\n", dest);
-    ft_memcpy(dest, src, 8);
-    printf("After memcpy dest = %s\n", dest);
-
-    return 0;
-
-}
+  return (0);*/
+} 

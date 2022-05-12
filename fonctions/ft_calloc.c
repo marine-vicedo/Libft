@@ -17,9 +17,44 @@ Si nmemb ou si size est nulle, calloc renvoie soit NULL ou un unique pointeur qu
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
-void *calloc(size_t nmemb, size_t size)
+void ft_bzero(void *s, size_t n)
 {
-    
+    size_t i;
+    i = 0;
+
+    char *s1 = (char *) s; //cast de *void to *char. 
+
+    while (i < n)
+    {
+        s1[i] = '\0';
+        i++;
+    }
 }
 
+void *ft_calloc(size_t nmemb, size_t size)
+{
+    void *ptr;
+
+    ptr = malloc (nmemb *size);
+
+    if (ptr == 0)
+        return (NULL);
+    ft_bzero(ptr, (nmemb * size));
+    return (ptr);
+}
+
+int main(void)
+{
+    //int *p2 = calloc(4, sizeof(int));    // allocate and zero out an array of 4 int
+
+    int *p2 = ft_calloc(4, sizeof(int));
+ 
+    if(p2) {
+        for(int n=0; n<4; ++n) // print the array
+            printf("p2[%d] == %d\n", n, p2[n]);
+    }
+    free(p2);
+
+}

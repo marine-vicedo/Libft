@@ -20,7 +20,7 @@ It returns an integer less than, equal to, or greater than zero if s1 (or the fi
 
 int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    size_t  i;
+    int  i;
 
     i = 0;
 	while ((s1[i] || s2[i]) && (i < n))

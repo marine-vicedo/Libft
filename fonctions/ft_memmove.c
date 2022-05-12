@@ -53,15 +53,23 @@ void *ft_memmove(void *dest, const void *src, size_t n)
     return ((void *) d);
 }
 
+void print_elements(char *array, int size)
+{
+  int i;
+  printf ("Elements : ");
+  for (i = 0; i < size; i++) {
+    printf ("%c, ", array[i]);
+  }
+  printf (" ");
+}
+
 int main(void)
 {
-    char    dest[100] = "oldstring";
-    char    src[100] = "newstring";
+    char c_array[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+    print_elements(c_array, sizeof(c_array));
+    printf("After memmove()\n");
+    ft_memmove((void *)&c_array[5], (void *)&c_array[3], 5);
+    print_elements(c_array, sizeof(c_array)); 
 
-    printf("Before memmove dest = %s, src = %s\n", dest, src);
-    memmove(dest, src, 8);
-    printf("After memmove dest = %s, src = %s\n", dest, src);
-
-    ft_memmove(dest, src, 8);
-    printf("After memmove dest = %s, src = %s\n", dest, src);
+  return (0);
 }

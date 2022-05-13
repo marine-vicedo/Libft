@@ -17,8 +17,7 @@ start: L’index de début de la nouvelle chaîne dans la chaîne ’s’.
 len: La taille maximale de la nouvelle chaîne 
 Valeur de retour : La nouvelle chaîne de caractères. NULL si l’allocation échoue.*/
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char    *ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -27,7 +26,13 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
 
     i = 0;
     dst = malloc((len + 1) * sizeof(dst));
+    if (size != '\0' && size >= dst_len)
+        dst[i] = '\0';
 
+    if (size < dst_len)
+        return (src_len + size);
+    else
+        return (dst_len + src_len);
     if (dst == 0)
         return (NULL);
     while (*s && (i < len))
@@ -40,11 +45,11 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
     return (dst);
 }
 
-int main(void)
+/*int main(void)
 {
     char s1[] = "abcdefghi";
 
     printf("%s\n", ft_substr(s1, 2, 4));
 
     return (0);
-}
+}*/

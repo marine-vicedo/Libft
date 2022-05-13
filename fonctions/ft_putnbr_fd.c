@@ -14,12 +14,12 @@
 n: L’entier à écrire.
 fd: Le descripteur de fichier sur lequel écrire. */
 
-#include <unistd.h>
+#include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+/*void ft_putchar_fd(char c, int fd)
 {
     write(fd, &c, 1);
-}
+}*/
 
 void ft_putnbr_fd(int n, int fd)
 {
@@ -40,12 +40,12 @@ void ft_putnbr_fd(int n, int fd)
 	}
 }
 
-int main(void)
+/*int main(void)
 {
     int nb = -123;
     int fd = 1;
 
     ft_putnbr_fd(nb, fd);
     return (0);
-}
+}*/
 

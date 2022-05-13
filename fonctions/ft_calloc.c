@@ -15,11 +15,9 @@ et renvoie un pointeur vers la mémoire allouée. Cette zone est remplie avec de
 Si nmemb ou si size est nulle, calloc renvoie soit NULL ou un unique pointeur qui pourra être passé ultérieurement à free() avec succès. 
 */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+/*void ft_bzero(void *s, size_t n)
 {
     size_t i;
     i = 0;
@@ -31,7 +29,7 @@ void ft_bzero(void *s, size_t n)
         s1[i] = '\0';
         i++;
     }
-}
+}*/
 
 void *ft_calloc(size_t nmemb, size_t size)
 {
@@ -45,7 +43,7 @@ void *ft_calloc(size_t nmemb, size_t size)
     return (ptr);
 }
 
-int main(void)
+/*int main(void)
 {
     //int *p2 = calloc(4, sizeof(int));    // allocate and zero out an array of 4 int
 
@@ -57,4 +55,4 @@ int main(void)
     }
     free(p2);
 
-}
+}*/

@@ -16,9 +16,7 @@ s1: La chaîne de caractères à trimmer.
 set: Le set de référence de caractères à trimmer.
 Valeur de retour : La chaîne de caractères trimmée. NULL si l’allocation échoue. */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 size_t ft_strlen(const char *s)
 {
@@ -30,34 +28,60 @@ size_t ft_strlen(const char *s)
     return (i);
 }
 
+
+char    *ft_substr(char const *s, unsigned int start, size_t len)
+{
+    char *dst;
+    unsigned int    i;
+
+    i = 0;
+    dst = malloc((len + 1) * sizeof(dst));
+    if (size != '\0' && size >= dst_len)
+        dst[i] = '\0';
+
+    if (size < dst_len)
+        return (src_len + size);
+    else
+        return (dst_len + src_len);
+    if (dst == 0)
+        return (NULL);
+    while (*s && (i < len))
+    {
+        dst[i] = s[start];
+        start++;
+        i++;
+    }
+    dst[i] = '\0';
+    return (dst);
+}
+
+/*static int trim_charset(char const set)
+{
+    if (c == ' ' || c >= 9 && c <= 13)
+        return (1);
+}*/
+
 char *ft_strtrim(char const *s1, char const *set)
 {
-    char *s2;
-    unsigned int len;
-    unsigned int i;
+   unsigned int i;
 
-    len = ft_strlen(s1);
-    s2 = malloc((len + 1) * sizeof(s2));
-    i = 0;
+   i = 0;
+   while (set[i])
+   {
+       i++;
+   }
+   
 
-    if(s1 == 0 || s2 == 0)
-        return (NULL);
-    while (*s1)
-    {
-        if (s1[i] != *set)
-        {
-            s2[i] = s1[i];
-            i++;
-        }
 
-    }
-    return (s2);
-}
 
 int  main(void)
 {
-    char s1[] = "   abc";
-    char set[] = "a";
+    char s1[] = "|||///Salut/Ca|Va|/";
+    char set[] = "|/";
+
+    .. 
 
     printf("%s\n", ft_strtrim(s1, set));
-}
+
+    return (0);
+} 

@@ -13,8 +13,7 @@
 /* toupper() converts lowercase letter to uppercase.
 It returns the converted letter or c if the conversion was not possible. */
 
-#include <ctype.h>
-#include <stdio.h>
+#include "libft.h"
 
 int ft_toupper(int c)
 {
@@ -23,9 +22,9 @@ int ft_toupper(int c)
     return (c);
 }
 
-int main(void)
+/*int main(void)
 {
     printf("%c\n", toupper('a'));
     printf("%c\n", ft_toupper('a'));
     return 0;
-}
+}*/

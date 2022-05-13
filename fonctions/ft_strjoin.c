@@ -15,11 +15,9 @@ s1: La chaîne de caractères préfixe.
 s2: La chaîne de caractères suffixe.
 Valeur de retour : La nouvelle chaîne de caractères. NULL si l’allocation échoue. */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-size_t ft_strlen(const char *s)
+/*size_t ft_strlen(const char *s)
 {
     unsigned int i;
 
@@ -27,9 +25,9 @@ size_t ft_strlen(const char *s)
     while (s[i])
         i++;
     return (i);
-}
+}*/
 
-char	*ft_strcat(char *dest, char *src)
+static char	*ft_strcat(char *dest, char *src)
 {
 	unsigned int	i;
 	unsigned int	dest_len;
@@ -46,7 +44,7 @@ char	*ft_strcat(char *dest, char *src)
 
 }
 
-char	*ft_strcpy(char *dest, char *src)
+static char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
 
@@ -78,11 +76,11 @@ char    *ft_strjoin(char const *s1, char const *s2)
     return (dst);
 }
 
-int main(void)
+/*int main(void)
 {
     char s1 [] = "bon";
     char s2 [] = "jour";
 
     printf("%s\n", ft_strjoin(s1, s2));
     return (0);
-}
+}*/

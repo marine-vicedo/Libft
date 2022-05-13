@@ -15,8 +15,7 @@ The strncmp() function is similar, except it compares only the first (at most) n
 It returns an integer less than, equal to, or greater than zero if s1 (or the first n bytes thereof) is found, respectively, to be less than, to match, or be greater than s2.
 */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -32,9 +31,9 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	printf("%d\n", strncmp("ananas", "abc", 4));
     printf("%d\n", ft_strncmp("ananas", "abc", 4));
 	return (0);
-}
+}*/

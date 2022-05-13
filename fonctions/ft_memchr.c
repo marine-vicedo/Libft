@@ -15,8 +15,7 @@ La fonction memchr() examine les n premiers octets de la zone mémoire pointée 
 Le premier octet correspondant à c (interprété comme un unsigned char) arrête l'opération.
 Renvoie un pointeur sur l'octet correspondant, ou NULL si le caractère n'est pas présent dans la zone de mémoire concernée. */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void    *ft_memchr(const void *s, int c, size_t n)
 {
@@ -36,7 +35,7 @@ void    *ft_memchr(const void *s, int c, size_t n)
     return (0);
 }
 
-int main(void)
+/*int main(void)
 {
 
     char data[] = "les chats";
@@ -55,4 +54,4 @@ int main(void)
     printf( "50 is %s\n", ( found != NULL ? "found" : "not found" ) );
 
     return (0);
-}
+}*/

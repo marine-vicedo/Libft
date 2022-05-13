@@ -17,10 +17,9 @@ Take the full size of the buffer (not just the length) and guarantee to NUL-term
 larger than 0. Note that a byte for the NUL should be included in size. 
 The function returns the total lenght of the new string (the lenght of src).*/
 
-#include <stdio.h>
-#include <bsd/string.h>
+#include "libft.h"
 
-size_t ft_strlen(const char *s) // a retirer / libft
+/*size_t ft_strlen(const char *s) // a retirer / libft
 {
     unsigned int    i;
 
@@ -28,7 +27,7 @@ size_t ft_strlen(const char *s) // a retirer / libft
     while (s[i])
         i++;
     return (i);
-}
+}*/
 
 size_t  ft_strlcpy(char *dst, const char *src, size_t size)
 {
@@ -48,7 +47,7 @@ size_t  ft_strlcpy(char *dst, const char *src, size_t size)
     return (ft_strlen(src)); //Return the number of bytes copied
 }
 
-int main(void)
+/*int main(void)
 {
     char    dest[100];
     char    src[100] = "newst";
@@ -57,5 +56,4 @@ int main(void)
     printf("%ld\n", ft_strlcpy(dest, src, 8));
 
     return 0;
-}
-
+}*/

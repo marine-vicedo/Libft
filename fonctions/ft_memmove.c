@@ -18,10 +18,7 @@ et les octets sont ensuite copiés de la zone temporaire vers dest.
 
 La fonction memmove() renvoie un pointeur sur dest.*/
 
-
-
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void *ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -53,7 +50,7 @@ void *ft_memmove(void *dest, const void *src, size_t n)
     return ((void *) d);
 }
 
-void print_elements(char *array, int size)
+/*void print_elements(char *array, int size)
 {
   int i;
   printf ("Elements : ");
@@ -73,3 +70,4 @@ int main(void)
 
   return (0);
 }
+*/

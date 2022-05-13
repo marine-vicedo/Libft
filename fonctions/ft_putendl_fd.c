@@ -14,12 +14,12 @@
 s: La chaîne de caractères à écrire.
 fd: Le descripteur de fichier sur lequel écrire. */
 
-#include <unistd.h>
+#include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+/*void ft_putchar_fd(char c, int fd)
 {
     write(fd, &c, 1);
-}
+}*/
 
 void ft_putendl_fd(char *s, int fd)
 {
@@ -34,11 +34,11 @@ void ft_putendl_fd(char *s, int fd)
     ft_putchar_fd('\n', fd);
 }
 
-int main(void)
+/*int main(void)
 {
     char s[15] = "hello world !";
     int fd = 1;
 
     ft_putendl_fd(s, fd);
     return (0);
-}
+}*/

@@ -6,11 +6,12 @@
 /*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 16:19:15 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/06 16:19:21 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/13 16:45:39 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* La fonction memset() remplit les n premiers octets de la zone mémoire pointée par s avec l'octet c. 
+/* La fonction memset() remplit les n premiers octets de la zone mémoire
+pointée par s avec l'octet c. 
 La fonction memset() renvoie un pointeur sur la zone mémoire s.  */
 // s => starting address of memory to be filled
 // c => value to be filed
@@ -20,27 +21,24 @@ La fonction memset() renvoie un pointeur sur la zone mémoire s.  */
 we put the type inside parentheses, as in (char *)
 and place it immediately before the item we want to cast*/
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-void *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-    size_t i;
-    //unsigned int i;
-    i = 0;
+	size_t	i;
+	char	*s1;
 
-    char *s1;
-    s1 = (char *) s; //cast de *void to *char
-
-    while (i < n)
-    {
-        s1[i] = c;
-        i++;
-    }
-    return ((void *)s1);
+	i = 0;
+	s1 = (char *) s;
+	while (i < n)
+	{
+		s1[i] = c;
+		i++;
+	}
+	return ((void *)s1);
 }
 
-int main(void)
+/*int main(void)
 {
     char str[50] = "Il est dix-sept heures";
     printf("Before memset():%s\n", str);
@@ -51,4 +49,4 @@ int main(void)
     ft_memset(str + 10, '.', 2*sizeof(char));
     printf("After ft_memset():  %s\n", str);
     return 0;
-}
+}*/

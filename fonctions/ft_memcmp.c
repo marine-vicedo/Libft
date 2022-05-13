@@ -14,8 +14,7 @@
 La fonction memcmp() compare les n premiers octets des zones mémoire s1 et s2.
 Elle renvoie un entier inférieur, égal, ou supérieur à zéro, si s1 est respectivement inférieure, égale ou supérieur à s2. */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -36,10 +35,10 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0);
 }
 
-int main (void)
+/*int main (void)
 {
     printf("%d\n", memcmp("ananas", "bzc", 3));
     printf("%d\n", ft_memcmp("ananas", "bzc", 3));
 
     return (0);
-}
+}*/

@@ -13,8 +13,7 @@
 /* tolower() converts uppercase letter to lowercase.
 It returns the converted letter or c if the conversion was not possible. */
 
-#include <ctype.h>
-#include <stdio.h>
+#include "libft.h"
 
 int ft_tolower(int c)
 {
@@ -23,9 +22,9 @@ int ft_tolower(int c)
     return (c);
 }
 
-int main(void)
+/*int main(void)
 {
     printf("%c\n", tolower('A'));
     printf("%c\n", ft_tolower('A'));
     return 0;
-}
+}*/

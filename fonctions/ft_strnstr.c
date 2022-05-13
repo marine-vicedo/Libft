@@ -19,8 +19,7 @@ If little is an empty string, big is returned; if little occurs nowhere in big, 
 otherwise a pointer to the first character of the first occurrence of little is returned.
 */
 
-#include <bsd/string.h>
-#include <stdio.h>
+#include "libft.h"
 
 char *ft_strnstr(const char *big, const char *little, size_t len)
 {   
@@ -48,7 +47,7 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
     return (NULL);
 }
 
-int main(void)
+/*int main(void)
 {
 	const char *largestring = "Foo Bar Baz";
 	const char *smallstring = "Bar Bar";
@@ -57,4 +56,4 @@ int main(void)
     printf("ma fonction : %s\n", ft_strnstr(largestring, smallstring, 7));
 
     return 0;
-}
+}*/

@@ -14,8 +14,7 @@
 La fonction strchr() renvoie un pointeur sur la première occurrence du caractère c dans la chaîne s. 
 ou NULL si le caractère n'a pas été trouvé. */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 char    *ft_strchr(const char *s, int c)
 {
@@ -32,7 +31,7 @@ char    *ft_strchr(const char *s, int c)
     return (0);
 }
 
-int main(void)
+/*int main(void)
 {
     char    s1[100] = "les chatons";
     int c = 'c';
@@ -41,4 +40,4 @@ int main(void)
     printf("%s\n", ft_strchr(s1, c));
 
     return 0;
-}
+}*/

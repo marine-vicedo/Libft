@@ -13,11 +13,9 @@
 /* La fonction strdup() renvoie un pointeur sur une nouvelle chaîne de caractères qui est dupliquée depuis s.
 La mémoire occupée par cette nouvelle chaîne est obtenue en appelant malloc, et doit donc être libérée avec free */
 
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_strlen(char *s)
+/*int	ft_strlen(char *s)
 {
 	unsigned int	len;
 
@@ -25,7 +23,7 @@ int	ft_strlen(char *s)
 	while (s[len])
 		len++;
 	return (len);
-}
+}*/
 
 char	*ft_strdup(const char *s)
 {
@@ -48,7 +46,7 @@ char	*ft_strdup(const char *s)
 	return (dest);
 }
 
-int	main(int argc, char **argv)
+/*int	main(int argc, char **argv)
 {
 	if (argc == 2)
 		printf("%s\n", ft_strdup(argv[1]));

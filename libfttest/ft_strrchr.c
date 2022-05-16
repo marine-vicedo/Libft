@@ -15,6 +15,7 @@ La fonction strrchr() renvoie un pointeur sur la dernière occurrence du caract�
 ou NULL si le caractère n'a pas été trouvé. */
 
 #include "libft.h"
+#include <string.h>
 
 char    *ft_strrchr(const char *s, int c)
 {
@@ -41,7 +42,7 @@ char    *ft_strrchr(const char *s, int c)
 /*int main(void)
 {
     char    s1[20] = "les chatons chat";
-    int c = 'c';
+    int c = 0;
 
     printf("%s\n", strrchr(s1, c));
     printf("%s\n", ft_strrchr(s1, c));

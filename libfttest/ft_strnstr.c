@@ -20,34 +20,29 @@ otherwise a pointer to the first character of the first occurrence of little is 
 */
 
 #include "libft.h"
-#include <bsd/string.h>
+//#include <bsd/string.h>
 
 char *ft_strnstr(const char *big, const char *little, size_t len)
 {   
     size_t	i;
-	size_t	j;
-    //char *res;
 
 	i = 0;
-	j = 0;
-
-    if (*big == 0)
+    if (ft_strlen(little) == 0)
+        return ((char *)big);
+    if (ft_strlen(little) > len)
         return (NULL);
-    if (*little == '\0')
-        return ((char *) big);
 
-    while (*big && (strlen(little) < len))
+    while (*big && i < len)
     {
-        while (*little && (big[i] == little[j]))
-        {
-            i++;
-            j++;
-        }
-        i++;
-    }
-    if (little[j] == '\0')
-            return((char *) little);
-    return (NULL);
+        if (ft_strncmp(((char *)big + i), little, ft_strlen(little)) == 0)
+		{
+			if (i + ft_strlen(little) > len)
+				return (NULL);
+			return ((char *)big + i);
+		}
+		i++;
+	}
+	return (NULL);
 }
 
 /*int main(void)

@@ -11,11 +11,14 @@
 /* ************************************************************************** */
 
 /* The strlcat() function appends the NUL-terminated string src to the end of dst. 
-It will append at most size - strlen(dst) - 1 bytes, NUL-terminating the result.*/
+It will append at most size - strlen(dst) - 1 bytes, NUL-terminating the result.
+size : taille de la destination à copier
+*/
 
 #include "libft.h"
+#include <bsd/string.h>
 
-/*size_t ft_strlen(const char *s) // a retirer / libft
+size_t ft_strlen(const char *s) // a retirer / libft
 {
     unsigned int    i;
 
@@ -23,51 +26,50 @@ It will append at most size - strlen(dst) - 1 bytes, NUL-terminating the result.
     while (s[i])
         i++;
     return (i);
-}*/
+}
 
 size_t  ft_strlcat(char *dst, const char *src, size_t size)
 {
     unsigned int    i;
     unsigned int    j;
-    unsigned int    dst_len;
-    unsigned int    src_len;
+    size_t    dst_len;
+    size_t   src_len;
 
-    i = 0;
+    i = ft_strlen(dst);
     j = 0;
     dst_len = ft_strlen(dst);
     src_len = ft_strlen(src);
     
-    while (dst[i] && (i < size))
-        i++;
-        
-    while (src[j] && (j < (size - 1)))
+    if (size == 0)
+        return (ft_strlen(src));
+    while (src[j] && (i + j) < size - 1)
     {
-        dst[i] = src[j];
-        i++;
+        dst[i + j] = src[j];
         j++;
     }
-    if (size != '\0' && size >= dst_len)
-        dst[i] = '\0';
-
-    if (size < dst_len)
-        return (src_len + size);
-    else
-        return (dst_len + src_len);
+    dst[j + i] = '\0';
+    if(size <= dst_len)
+        dst_len = size;
+    return (dst_len + src_len);
 }
 
-/*int main (void)
+/*void	ft_print_result(int n)
 {
-    char    src1[100] = "This is source"; //lenght = 14
-    char    dst1[100] = "This is destination";//lenght = 19
+	char c;
 
-    char    src2[100] = "This is source"; //lenght = 14
-    char    dst2[100] = "anchdef";//lenght = 7
-
-   printf("result strlcat : %ld\n", strlcat(dst1, src1, 20));
-   printf("result strlcat : %ld\n", strlcat(dst2, src2, 8));
-   
-   printf("result ft_strlcat : %ld\n", ft_strlcat(dst1, src1, 20));
-   printf("result ft_strlcat : %ld\n", strlcat(dst2, src2, 8));
+	if (n >= 10)
+		ft_print_result(n / 10);
+	c = n % 10 + '0';
+	write (1, &c, 1);
+}
+int main (void)
+{
+    char dest[20];
+    memset(dest, 'r', 15);
+	//ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 5));
+    ft_print_result(strlcat(dest, "lorem ipsum dolor sit amet", 5));
+	write(1, "\n", 1);
+	write(1, dest, 15);
    
    return (0);
 }*/

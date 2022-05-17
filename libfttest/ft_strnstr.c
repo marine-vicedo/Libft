@@ -20,40 +20,43 @@ otherwise a pointer to the first character of the first occurrence of little is 
 */
 
 #include "libft.h"
+#include <bsd/string.h>
 
 char *ft_strnstr(const char *big, const char *little, size_t len)
 {   
     size_t	i;
 	size_t	j;
+    //char *res;
 
 	i = 0;
 	j = 0;
 
-    if (little[i] == '\0')
+    if (*big == 0)
+        return (NULL);
+    if (*little == '\0')
         return ((char *) big);
 
-    while (*big && (i < len))
+    while (*big && (strlen(little) < len))
     {
         while (*little && (big[i] == little[j]))
         {
             i++;
             j++;
         }
-        if (little[j] == '\0')
-            return((char *) little);
         i++;
-
     }
+    if (little[j] == '\0')
+            return((char *) little);
     return (NULL);
 }
 
 /*int main(void)
 {
-	const char *largestring = "Foo Bar Baz";
-	const char *smallstring = "Bar Bar";
+	char big[30] = "aaabcabcd";
+	//char little[10] = "aabc";
 
-    printf("resultat vraie fonction : %s\n", strnstr(largestring, smallstring, 7));
-    printf("ma fonction : %s\n", ft_strnstr(largestring, smallstring, 7));
+    printf("resultat vraie fonction : %s\n", strnstr(big, "abcd", 10));
+    //printf("ma fonction : %s\n", ft_strnstr(big, "abcd", 9));
 
     return 0;
 }*/

@@ -11,11 +11,13 @@
 /* ************************************************************************** */
 
 /* The strlcat() function appends the NUL-terminated string src to the end of dst. 
-It will append at most size - strlen(dst) - 1 bytes, NUL-terminating the result.*/
+It will append at most size - strlen(dst) - 1 bytes, NUL-terminating the result.
+size : taille de la destination à copier
+*/
 
 #include "libft.h"
 
-/*size_t ft_strlen(const char *s) // a retirer / libft
+size_t ft_strlen(const char *s) // a retirer / libft
 {
     unsigned int    i;
 
@@ -23,7 +25,7 @@ It will append at most size - strlen(dst) - 1 bytes, NUL-terminating the result.
     while (s[i])
         i++;
     return (i);
-}*/
+}
 
 size_t  ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -33,41 +35,28 @@ size_t  ft_strlcat(char *dst, const char *src, size_t size)
     unsigned int    src_len;
 
     i = 0;
-    j = 0;
+    j = ft_strlen(dst);
     dst_len = ft_strlen(dst);
     src_len = ft_strlen(src);
     
-    while (dst[i] && (i < size))
-        i++;
-        
-    while (src[j] && (j < (size - 1)))
+    if (size <= ft_strlen(dst))
+        return (size + ft_strlen(dst));
+    while (src[i] && (i + 1) < size)
     {
-        dst[i] = src[j];
+        dst[j] = src[i];
         i++;
         j++;
     }
-    if (size != '\0' && size >= dst_len)
-        dst[i] = '\0';
-
-    if (size < dst_len)
-        return (src_len + size);
-    else
-        return (dst_len + src_len);
+    dst[j] = '\0';
+    return (ft_strlen(dst) + ft_strlen(&src[i]));
 }
 
 /*int main (void)
 {
-    char    src1[100] = "This is source"; //lenght = 14
-    char    dst1[100] = "This is destination";//lenght = 19
-
-    char    src2[100] = "This is source"; //lenght = 14
-    char    dst2[100] = "anchdef";//lenght = 7
-
-   printf("result strlcat : %ld\n", strlcat(dst1, src1, 20));
-   printf("result strlcat : %ld\n", strlcat(dst2, src2, 8));
+    char    src1[30] = "AAAAAAAAA"; //lenght = 9
+    char    dst1[2] = "BB";//lenght = 2
    
-   printf("result ft_strlcat : %ld\n", ft_strlcat(dst1, src1, 20));
-   printf("result ft_strlcat : %ld\n", strlcat(dst2, src2, 8));
+   printf("result ft_strlcat : %ld\n", ft_strlcat(dst1, src1, 1));
    
    return (0);
 }*/

@@ -17,10 +17,7 @@ start: L’index de début de la nouvelle chaîne dans la chaîne ’s’.
 len: La taille maximale de la nouvelle chaîne 
 Valeur de retour : La nouvelle chaîne de caractères. NULL si l’allocation échoue.*/
 
-//#include "libft.h"
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 char    *ft_substr(char const    *s, unsigned int    start, size_t    len)
 	{
@@ -48,11 +45,11 @@ char    *ft_substr(char const    *s, unsigned int    start, size_t    len)
 	    return (res);
 	}
 
-int main(void)
+/*int main(void)
 {
     char s1[] = "abcdefghi";
 
     printf("%s\n", ft_substr(s1, 2, 4));
 
     return (0);
-}
+}*/

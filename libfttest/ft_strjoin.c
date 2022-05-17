@@ -17,7 +17,7 @@ Valeur de retour : La nouvelle chaîne de caractères. NULL si l’allocation é
 
 #include "libft.h"
 
-/*size_t ft_strlen(const char *s)
+size_t ft_strlen(const char *s)
 {
     unsigned int i;
 
@@ -25,7 +25,7 @@ Valeur de retour : La nouvelle chaîne de caractères. NULL si l’allocation é
     while (s[i])
         i++;
     return (i);
-}*/
+}
 
 static char	*ft_strcat(char *dest, char *src)
 {
@@ -70,7 +70,7 @@ char    *ft_strjoin(char const *s1, char const *s2)
     dst = malloc((len + 1) * sizeof(dst));
     if (dst == 0)
         return (NULL);
-
+    if (*s1)
     ft_strcpy(dst, (char *)s1);
     ft_strcat(dst, (char *)s2);
     return (dst);
@@ -82,5 +82,11 @@ char    *ft_strjoin(char const *s1, char const *s2)
     char s2 [] = "jour";
 
     printf("%s\n", ft_strjoin(s1, s2));
+    return (0);
+}*/
+
+/*int main(void)
+{
+    printf("%s\n", ft_strjoin("tripouille", "42\0"));
     return (0);
 }*/

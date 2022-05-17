@@ -6,16 +6,18 @@
 /*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 16:53:19 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/11 16:53:21 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/17 15:19:20 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* La fonction calloc() alloue la mémoire nécessaire pour un tableau de nmemb éléments de size octets,
-et renvoie un pointeur vers la mémoire allouée. Cette zone est remplie avec des zéros.
-Si nmemb ou si size est nulle, calloc renvoie soit NULL ou un unique pointeur qui pourra être passé ultérieurement à free() avec succès. 
-*/
+/* La fonction calloc() alloue la mémoire nécessaire pour un tableau de nmemb
+éléments de size octets, et renvoie un pointeur vers la mémoire allouée. Cette
+zone est remplie avec des zéros. Si nmemb ou si size est nulle, calloc renvoie
+soit NULL ou un unique pointeur qui pourra être passé ultérieurement à free()
+avec succès. */
 
 #include "libft.h"
+//#include <stdint.h>
 
 /*void ft_bzero(void *s, size_t n)
 {
@@ -31,21 +33,24 @@ Si nmemb ou si size est nulle, calloc renvoie soit NULL ou un unique pointeur qu
     }
 }*/
 
-void *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-    void *ptr;
+	void	*ptr;
+    unsigned int size_max;
 
-    ptr = malloc (nmemb *size);
-
-    if (ptr == 0)
-        return (NULL);
-    ft_bzero(ptr, (nmemb * size));
-    return (ptr);
+    size_max = 2147483647;
+	ptr = malloc (nmemb * size);
+	if (ptr == 0)
+		return (NULL);
+	if (nmemb > (size_max / size))
+		return (NULL);
+	ft_bzero(ptr, (nmemb * size));
+	return (ptr);
 }
 
-/*int main(void)
+/*int main (void)
 {
-    //int *p2 = calloc(4, sizeof(int));    // allocate and zero out an array of 4 int
+    //int *p2 = calloc(4, sizeof(int));
 
     int *p2 = ft_calloc(4, sizeof(int));
  
@@ -54,5 +59,4 @@ void *ft_calloc(size_t nmemb, size_t size)
             printf("p2[%d] == %d\n", n, p2[n]);
     }
     free(p2);
-
 }*/

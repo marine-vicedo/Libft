@@ -6,7 +6,7 @@
 /*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:05:05 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/13 17:00:17 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/17 17:14:03 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ La fonction memcpy() renvoie un pointeur sur dest. */
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
+	char	*s;
 	char	*d;
-	const char	*s;
 
 	d = (char *) dest;
 	s = (char *) src;

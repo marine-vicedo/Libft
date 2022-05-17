@@ -32,7 +32,11 @@ void    *ft_memchr(const void *s, int c, size_t n)
     while (i < n)
     {
         if(s1[i] == (unsigned char)c)
+<<<<<<< HEAD
             return ((char *)s + i);
+=======
+            return ((char *)&s[i]);
+>>>>>>> fb4d6feae3c0125bcff3e5b634970b040268cc0b
         i++;
     }
     return (0);

@@ -15,7 +15,7 @@ of dst.  It will append at most size - strlen(dst) - 1 bytes,
 NUL-terminating the result. size : taille de la destination à copier*/
 
 #include "libft.h"
-#include <bsd/string.h>
+//#include <bsd/string.h>
 
 /*size_t	ft_strlen(const char *s)
 {
@@ -30,26 +30,20 @@ NUL-terminating the result. size : taille de la destination à copier*/
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	j;
 	size_t	dst_len;
 	size_t	src_len;
 
-	i = ft_strlen(dst);
-	j = 0;
+	i = 0;
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
-	if (size == 0 || size < dst_len)
+	if (size == 0 || size <= dst_len)
 		return (src_len + size);
-    if (size <= dst_len)
-		dst_len = size;
-	while (src[j] && (i + j) < size - 1)
+	while (src[i] && (i + dst_len) < size - 1)
 	{
-		dst[i + j] = src[j];
-		j++;
+		dst[i + dst_len] = src[i];
+		i++;
 	}
-	dst[j + i] = '\0';
-	if (size < dst_len)
-		dst_len = size;
+	dst[i + dst_len] = '\0';
 	return (dst_len + src_len);
 }
 

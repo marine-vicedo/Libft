@@ -47,9 +47,8 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
 
 /*int main(void)
 {
-    char s1[] = "abcdefghi";
+    char s1[] = "1";
 
-    printf("%s\n", ft_substr(s1, 2, 4));
-
+    printf("%s\n", ft_substr(s1, 42, 42000000));
     return (0);
 }*/

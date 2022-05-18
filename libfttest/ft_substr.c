@@ -19,7 +19,7 @@ Valeur de retour : La nouvelle chaîne de caractères. NULL si l’allocation é
 
 #include "libft.h"
 
-char    *ft_substr(char const    *s, unsigned int    start, size_t    len)
+char    *ft_substr(char const *s, unsigned int start, size_t len)
 	{
 	    size_t    i;
 	    size_t    j;
@@ -27,10 +27,10 @@ char    *ft_substr(char const    *s, unsigned int    start, size_t    len)
 	
 	    i = 0;
 	    j = 0;
-	    if (!s)
+	    if (s == 0)
 	        return (NULL);
-	    res = malloc(sizeof(char) * (len + 1));
-	    if (!res)
+	    res = (char*)malloc(sizeof(char) * (len + 1));
+	    if (res == 0)
 	        return (NULL);
 	    while (s[i])
 	    {

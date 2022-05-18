@@ -6,7 +6,7 @@
 /*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 16:53:19 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/17 15:19:20 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/18 10:20:35 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ avec succès. */
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
-    unsigned int size_max;
+	size_t	sizemax;
 
-    size_max = 2147483647;
+	sizemax = 2147483647;
 	ptr = malloc (nmemb * size);
 	if (ptr == 0)
 		return (NULL);
-	if (nmemb > (size_max / size))
+	if (nmemb > (sizemax / size))
 		return (NULL);
 	ft_bzero(ptr, (nmemb * size));
 	return (ptr);

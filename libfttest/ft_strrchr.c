@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 /* Rechercher un caractère dans une chaîne.
-La fonction strrchr() renvoie un pointeur sur la dernière occurrence du caractère c dans la chaîne s 
-ou NULL si le caractère n'a pas été trouvé. */
+La fonction strrchr() renvoie un pointeur sur la dernière occurrence du
+caractère c dans la chaîne s ou NULL si le caractère n'a pas été trouvé. */
 
 #include "libft.h"
 #include <string.h>
@@ -41,13 +41,8 @@ char    *ft_strrchr(const char *s, int c)
 
 /*int main(void)
 {
-<<<<<<< HEAD
     //char s[] = "tripouille";
 	char s2[] = "ltripouiel";
-=======
-    char    s1[20] = "les chatons chat";
-    int c = 0;
->>>>>>> fb4d6feae3c0125bcff3e5b634970b040268cc0b
 
     printf("%s\n", strrchr(s2, 't' + 256));
     printf("%s\n", ft_strrchr(s2, 't' + 256));

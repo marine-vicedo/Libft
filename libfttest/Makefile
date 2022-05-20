@@ -32,6 +32,8 @@ SRC = ft_atoi.c \
     ft_tolower.c \
     ft_toupper.c \
     ft_strtrim.c \
+    ft_split.c \
+    ft_itoa.c \
 
 BONUS_SRC = ft_lstnew.c \
             ft_lstadd_front.c \

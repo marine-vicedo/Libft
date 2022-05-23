@@ -39,10 +39,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	sizemax;
 
 	sizemax = 2147483647;
+    if (nmemb > (sizemax / size))
+		return (NULL);
 	ptr = malloc (nmemb * size);
 	if (ptr == 0)
-		return (NULL);
-	if (nmemb > (sizemax / size))
 		return (NULL);
 	ft_bzero(ptr, (nmemb * size));
 	return (ptr);

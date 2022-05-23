@@ -21,7 +21,7 @@ résultant du découpage. NULL si l’allocation échoue.*/
 #include <string.h>
 #include "libft.h"
 
-size_t ft_countwords(char const *s, char c)
+static size_t ft_countwords(char const *s, char c)
 {
      size_t    i;// COMPT de la string *s
      size_t    count;// COMPT des words
@@ -43,60 +43,87 @@ size_t ft_countwords(char const *s, char c)
      return(count);
 }
 
-size_t  ft_wordlen(char const *s, char c, int i)
+static size_t  ft_wordlen(char const *s, char c)
 {
-     size_t    len;
+     size_t    i;
 
-     len = 0;
+     i = 0;
      while (s[i] && s[i] != c)
-     {
-               len ++;
-               i++;
-     }
-     return (len);
+          i++;
+     return (i);
 }
 
-static char	**ft_freetab(char **s, size_t n)
+/*static char	**ft_freetab(char **s)
 {
-	while (n > 0)
+	size_t	i;
+
+	i = 0;
+	while(s[i])
 	{
-		free(s[n]);
-		n--;
+		free(s[i]);
+		i++;
 	}
 	free(s);
 	return (NULL);
+}*/
+
+
+static char *ft_result(char const *s, size_t i, char c) // i = compteur src
+{
+	char *str;
+	size_t	k; //compteur source
+	size_t	wordsize;
+	char	*word;
+
+	str = (char *)s;
+	k = 0;
+	wordsize = ft_wordlen(&s[i], c);
+	while (k < wordsize)
+	{
+		word = (char *)malloc(sizeof(char) * wordsize + 1);
+		if (word == 0)
+			return(NULL);
+		while(str[i] && str[i] != c)
+		{
+			word[k] = str[i];
+			k++;
+			i++;
+		}
+	}
+	word[k] = '\0';
+	return(word);
+
 }
+
 
 char **ft_split(char const *s, char c)
 {
      char **tab;
-     size_t    i;
-     size_t    j;
-     size_t    k;
+     size_t    size;
+	size_t	i;
+	size_t	j;
 
-     tab = (char **)malloc(sizeof(char *) * ft_countwords(s, c) + 1);
+	size =  ft_countwords(s, c);
+	if (s == 0)
+		return(NULL);
+     tab = (char **)malloc(sizeof(char *) * size + 1);
      if (tab == 0)
           return(NULL);
      i = 0;
-     j = -1;
-     while (++j < ft_countwords(s, c))
+     j = 0;
+     while (j < ft_countwords(s, c))
      {
-          while (s[i] && s[i] == c)
+          if (s[i] && s[i] == c)
                i++;
-		k = 0;
-          tab[j] = (char *)malloc(sizeof(char) * ft_wordlen(s, c, i) + 1);
-          if (tab[j] == 0)
-               return (ft_freetab(tab, j), NULL);
-          while (s[i] && s[i] != c)
-               tab[j][k++] = s[i++];
-          tab[j][k] = '\0';
+		tab[j] = ft_result(s, i, c);
+		j++;
      }
      tab[j] = NULL;
      return (tab);
 
 }
 
-/*void	ft_print_result(char const *s)
+void	ft_print_result(char const *s)
 {
 	int		len;
 
@@ -195,4 +222,4 @@ int		main(int argc, const char *argv[])
 				ft_print_result("ok\n");
 	}
 	return (0);
-}*/
+}

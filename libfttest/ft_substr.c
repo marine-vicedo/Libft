@@ -29,26 +29,6 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-char	*ft_strdup(const char *s)
-{
-	size_t	i;
-	size_t	len;
-	char	*dest;
-
-	i = 0;
-	len = ft_strlen((char *)s);
-	dest = (char *)malloc ((len + 1) * sizeof(char));
-	if (dest == 0)
-		return (NULL);
-	while (s[i])
-	{
-		dest[i] = s[i];
-			i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
 char    *ft_substr(char const *s, unsigned int start, size_t len)
 	{
 	    size_t    i;
@@ -75,9 +55,8 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
 	        {
 	            res[j] = s[i];
 	            j++;
-			  i++;
 	        }
-	        //i++;
+	        i++;
 	    }
 	    res[j] = '\0';
 	    return (res);

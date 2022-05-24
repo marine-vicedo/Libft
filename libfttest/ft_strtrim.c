@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 15:38:19 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/12 15:38:23 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/24 16:31:37 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,14 @@ char *ft_strtrim(char const *s1, char const *set)
     
     i = 0;
     start = 0;
-    end = ft_strlen((char *)(s1));
+    end = ft_strlen((char *)(s1)); // len de str sans le '/0'
     if (s1 == 0 || set == 0)
         return(NULL);
-    while (ft_compare(s1[start], set) == 1)
+    while (s1[start] && ft_compare(s1[start], set) == 1)
         start++;
-    while (ft_compare(s1[end - 1], set) == 1)
+    while (end > start && ft_compare(s1[end - 1], set) == 1) // end > start car start doit parcourir toute la chaine si pas de trim dans a chaine || s1[end - 1] <=> il s'agit d'un indice donc - 1
         end--;
-    str = (char *)malloc((end - start) * sizeof(char) + 1);
+    str = (char *)malloc(sizeof(char) * ((end - start) + 1));
     if (str == 0)
         return(NULL);
     while(start < end)
@@ -72,73 +72,10 @@ char *ft_strtrim(char const *s1, char const *set)
     return (str);
 }
 
-/*void	ft_print_result(char const *s)
+
+/*int		main(void)
 {
-	int		len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	write(1, s, len);
-}
-
-int		main(int argc, const char *argv[])
-{
-	char	*strtrim;
-	int		arg;
-
-	alarm(5);
-	if (argc == 1)
-		return (0);
-	else if ((arg = atoi(argv[1])) == 1)
-	{
-		char s1[] = "lorem \n ipsum \t dolor \n sit \t amet";
-		if (!(strtrim = ft_strtrim(s1, " ")))
-			ft_print_result("NULL");
-		else
-			ft_print_result(strtrim);
-		if (strtrim == s1)
-			ft_print_result("\nA new string was not returned");
-	}
-	else if (arg == 2)
-	{
-		char s1[] = "lorem ipsum dolor sit amet";
-		if (!(strtrim = ft_strtrim(s1, "te")))
-			ft_print_result("NULL");
-		else
-			ft_print_result(strtrim);
-		if (strtrim == s1)
-			ft_print_result("\nA new string was not returned");
-	}
-	else if (arg == 3)
-	{
-		char s1[] = " lorem ipsum dolor sit amet";
-		if (!(strtrim = ft_strtrim(s1, "l ")))
-			ft_print_result("NULL");
-		else
-			ft_print_result(strtrim);
-		if (strtrim == s1)
-			ft_print_result("\nA new string was not returned");
-	}
-	else if (arg == 4)
-	{
-		char s1[] = "lorem ipsum dolor sit amet";
-		if (!(strtrim = ft_strtrim(s1, "tel")))
-			ft_print_result("NULL");
-		else
-			ft_print_result(strtrim);
-		if (strtrim == s1)
-			ft_print_result("\nA new string was not returned");
-	}
-	else if (arg == 5)
-	{
-		char s1[] = "          ";
-		if (!(strtrim = ft_strtrim(s1, " ")))
-			ft_print_result("NULL");
-		else
-			ft_print_result(strtrim);
-		if (strtrim == s1)
-			ft_print_result("\nA new string was not returned");
-	}
+	printf("%s", ft_strtrim("   xxx   xxx", " x"));
 	return (0);
 }*/
+

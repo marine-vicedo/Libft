@@ -3,16 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 11:41:24 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/13 16:51:06 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/24 16:52:17 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/* bzero - Écrire des octets de valeur zéro dans un bloc d'octets   
-La fonction bzero() met à 0 (octets contenant « \0 ») les n premiers octets
-du bloc pointé par s. Elle ne renvoie aucune valeur. */
 
 #include "libft.h"
 
@@ -29,15 +25,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
-/*int main(void)
-{
-    char str[50] = "Il est dix-sept heures";
-    printf("Before bzero():%s\n", str);
-
-    bzero(str + 8, 3);
-    printf("After bzero():  %s\n", str);
-
-    ft_bzero(str + 8, 3);
-    printf("After ft_bzero(): %s\n", str);
-}*/

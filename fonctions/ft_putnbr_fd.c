@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 17:36:14 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/12 17:36:19 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/24 15:54:03 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ fd: Le descripteur de fichier sur lequel écrire. */
 
 void ft_putnbr_fd(int n, int fd)
 {
-	if (n == -2147483648)
-		write(1, "-2147483648", 11);
+	if (n == -2147483647)
+		write(1, "-2147483647", 11);
 	else if (n < 0)
 	{	
 		ft_putchar_fd('-', fd);

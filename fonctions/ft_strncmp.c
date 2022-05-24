@@ -25,15 +25,24 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 	while ((s1[i] || s2[i]) && (i < n))
 	{
 		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
 	return (0);
 }
 
-/*int	main(void)
+/*void	ft_print_result(int n)
 {
-	printf("%d\n", strncmp("ananas", "abc", 4));
-    printf("%d\n", ft_strncmp("ananas", "abc", 4));
+	if (n > 0)
+		write(1, "1", 1);
+	else if (n < 0)
+		write(1, "-1", 2);
+	else
+		write(1, "0", 1);
+}
+
+int	main(void)
+{
+	ft_print_result(ft_strncmp("test\200", "test\0", 6));
 	return (0);
 }*/

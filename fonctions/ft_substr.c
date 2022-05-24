@@ -19,18 +19,35 @@ Valeur de retour : La nouvelle chaîne de caractères. NULL si l’allocation é
 
 #include "libft.h"
 
-char    *ft_substr(char const    *s, unsigned int    start, size_t    len)
+size_t	ft_strlen(const char *s)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+char    *ft_substr(char const *s, unsigned int start, size_t len)
 	{
 	    size_t    i;
 	    size_t    j;
+	    size_t	slen;
 	    char    *res;
-	
+	    
 	    i = 0;
 	    j = 0;
-	    if (!s)
-	        return (NULL);
-	    res = malloc(sizeof(char) * (len + 1));
-	    if (!res)
+	    slen = ft_strlen(s);
+	    
+	    if (s == 0)
+	    	return (NULL);
+	    if (start > slen)
+		len = 0;
+	    else if (len + start > slen)
+		len = slen - start;
+	    res = (char*)malloc(sizeof(char) * (len + 1));
+	    if (res == 0)
 	        return (NULL);
 	    while (s[i])
 	    {
@@ -47,9 +64,8 @@ char    *ft_substr(char const    *s, unsigned int    start, size_t    len)
 
 /*int main(void)
 {
-    char s1[] = "abcdefghi";
+    char s1[] = "1";
 
-    printf("%s\n", ft_substr(s1, 2, 4));
-
+    printf("%s\n", ft_substr(s1, 42, 42000000));
     return (0);
 }*/

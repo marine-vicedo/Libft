@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:08:05 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/10 16:08:09 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/25 15:10:31 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char    *ft_strrchr(const char *s, int c)
         if(*str == (char)c)
             return ((char *)str);
     }
-    return (0);
+    return (NULL);
 }
 
 

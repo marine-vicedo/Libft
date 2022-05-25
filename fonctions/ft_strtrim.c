@@ -6,7 +6,7 @@
 /*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 15:38:19 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/24 16:31:37 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/25 13:18:44 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,12 @@ char *ft_strtrim(char const *s1, char const *set)
     
     i = 0;
     start = 0;
-    end = ft_strlen((char *)(s1)); // len de str sans le '/0'
+    end = ft_strlen((char *)(s1)); 
     if (s1 == 0 || set == 0)
         return(NULL);
     while (s1[start] && ft_compare(s1[start], set) == 1)
         start++;
-    while (end > start && ft_compare(s1[end - 1], set) == 1) // end > start car start doit parcourir toute la chaine si pas de trim dans a chaine || s1[end - 1] <=> il s'agit d'un indice donc - 1
+    while (end > start && ft_compare(s1[end - 1], set) == 1) // end > start car start doit parcourir toute la chaine si pas de trim dans a chaine || s1[end - 1] <=> il s'agit d'un indice donc - 1 || end = len de la src
         end--;
     str = (char *)malloc(sizeof(char) * ((end - start) + 1));
     if (str == 0)

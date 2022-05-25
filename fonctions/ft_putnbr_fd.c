@@ -6,28 +6,19 @@
 /*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 17:36:14 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/24 15:54:03 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:03:34 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Écrit l’entier ’n’ sur le descripteur de fichier donné.
-n: L’entier à écrire.
-fd: Le descripteur de fichier sur lequel écrire. */
-
 #include "libft.h"
 
-/*void ft_putchar_fd(char c, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-    write(fd, &c, 1);
-}*/
-
-void ft_putnbr_fd(int n, int fd)
-{
-	if (n == -2147483647)
-		write(1, "-2147483647", 11);
+	if (n == -2147483648)
+		write(fd, "-2147483648", 11);
 	else if (n < 0)
 	{	
-		ft_putchar_fd('-', fd);
+		write(fd, "-", 1);
 		n = -n;
 		ft_putnbr_fd(n, fd);
 	}
@@ -39,13 +30,3 @@ void ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd((n % 10), fd);
 	}
 }
-
-/*int main(void)
-{
-    int nb = -123;
-    int fd = 1;
-
-    ft_putnbr_fd(nb, fd);
-    return (0);
-}*/
-

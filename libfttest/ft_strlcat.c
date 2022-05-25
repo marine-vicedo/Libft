@@ -3,29 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 11:52:18 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/18 17:51:38 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/25 14:04:39 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* The strlcat() function appends the NUL-terminated string src to the end
-of dst.  It will append at most size - strlen(dst) - 1 bytes,
-NUL-terminating the result. size : taille de la destination à copier*/
-
 #include "libft.h"
-//#include <bsd/string.h>
-
-/*size_t	ft_strlen(const char *s)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}*/
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -46,24 +31,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[i + dst_len] = '\0';
 	return (dst_len + src_len);
 }
-
-/*void	ft_print_result(int n)
-{
-	char c;
-
-	if (n >= 10)
-		ft_print_result(n / 10);
-	c = n % 10 + '0';
-	write (1, &c, 1);
-}
-int main (void)
-{
-    
-    char dst[100] = "1234";
-    char src[100] = "ABCD";
-    //printf("%ld\n", strlcat(dst, src, 7));
-    //printf("%s\n", dst);
-    printf("%ld\n", ft_strlcat(dst, src, 7));
-   
-   return (0);
-}*/

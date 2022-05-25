@@ -6,7 +6,7 @@
 /*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 16:53:19 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/24 15:51:04 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:12:28 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,8 @@ avec succès. */
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
-	size_t	sizemax;
 
-	sizemax = 2147483647;
-    if (nmemb > (sizemax / size))
+	if (nmemb && ((nmemb * size) / nmemb) != size) //protection : verifie si la size est ok
 		return (NULL);
 	ptr = malloc (nmemb * size);
 	if (ptr == 0)

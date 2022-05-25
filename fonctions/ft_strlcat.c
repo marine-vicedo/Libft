@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 11:52:18 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/18 17:51:38 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:42:46 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 of dst.  It will append at most size - strlen(dst) - 1 bytes,
 NUL-terminating the result. size : taille de la destination à copier*/
 
-#include "libft.h"
+#include <stdio.h>
+#include <unistd.h>
 //#include <bsd/string.h>
 
 /*size_t	ft_strlen(const char *s)

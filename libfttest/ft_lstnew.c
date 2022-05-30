@@ -6,7 +6,7 @@
 /*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 14:45:17 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/27 18:14:35 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/30 12:21:05 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,11 @@ t_list *ft_lstnew(void *content)
 {
 	t_list *element;
 	
-	element = malloc(sizeof(t_list)); //equivaut a (sizeof(*element));
+	element = malloc(sizeof(*element)); //equivaut a (sizeof(t_list)));
 	
 	if (element == NULL)
-	{
 		exit(EXIT_FAILURE);
-	}
+		
 	element->content = content;
 	element->next = NULL;
 

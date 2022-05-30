@@ -6,7 +6,7 @@
 #    By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 16:53:23 by mvicedo           #+#    #+#              #
-#    Updated: 2022/05/27 17:33:34 by mvicedo          ###   ########.fr        #
+#    Updated: 2022/05/30 12:48:39 by mvicedo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,12 +49,12 @@ SRC = ft_atoi.c \
     ft_strmapi.c \
     ft_striteri.c
 
-BONUS_SRC = ft_lstnew.c
-            #ft_lstadd_front.c \
+BONUS_SRC = ft_lstnew.c \
+            ft_lstadd_front.c \
             ft_lstsize.c \
             ft_lstlast.c \
-            ft_lstadd_back.c\
-            ft_lstdelone.c \
+            ft_lstadd_back.c
+            #ft_lstdelone.c \
             ft_lstclear.c \
             ft_lstiter.c \
             ft_lstmap.c \#

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marinevicedo <marinevicedo@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 16:53:19 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/25 17:12:28 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/30 19:04:07 by marineviced      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 éléments de size octets, et renvoie un pointeur vers la mémoire allouée. Cette
 zone est remplie avec des zéros. Si nmemb ou si size est nulle, calloc renvoie
 soit NULL ou un unique pointeur qui pourra être passé ultérieurement à free()
-avec succès. */
+avec succès.
+Fonctions autorisees : malloc */
 
 #include "libft.h"
 //#include <stdint.h>

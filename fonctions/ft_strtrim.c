@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marinevicedo <marinevicedo@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 15:38:19 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/25 13:18:44 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/30 19:08:08 by marineviced      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 caractères spécifiés dans ’set’ au début et à la fin de la chaîne de caractères.
 s1: La chaîne de caractères à trimmer.
 set: Le set de référence de caractères à trimmer.
-Valeur de retour : La chaîne de caractères trimmée. NULL si l’allocation échoue. */
+Valeur de retour : La chaîne de caractères trimmée. NULL si l’allocation échoue.
+Fonction autorisee : malloc */
 
 #include "libft.h"
 #include <string.h>

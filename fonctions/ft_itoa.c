@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: marinevicedo <marinevicedo@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:28:32 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/25 13:28:29 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/30 19:07:29 by marineviced      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@ Alloue (avec malloc(3)) et retourne une chaîne de caractères représentant
 l’entier ’n’ reçu en argument. Les nombres négatifs doivent être gérés.
 n: L’entier à convertir.
 Valeur de retour :
-La chaîne de caractères représentant l’entier. NULL si l’allocation échoue.*/
+La chaîne de caractères représentant l’entier. NULL si l’allocation échoue.
+Fonction autorisee : malloc */
 
 /*
 connaitre la longueur du int, puis convertir en ascii (/base 10)

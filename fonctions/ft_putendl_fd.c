@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: marinevicedo <marinevicedo@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 17:30:21 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/12 17:30:24 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/30 19:09:27 by marineviced      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* Écrit La chaîne de caractères ’s’ sur le descripteur de fichier donné suivie d’un retour à la ligne.
 s: La chaîne de caractères à écrire.
-fd: Le descripteur de fichier sur lequel écrire. */
+fd: Le descripteur de fichier sur lequel écrire.
+Fonction autorisee : write */
 
 #include "libft.h"
 

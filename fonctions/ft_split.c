@@ -3,12 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marinevicedo <marinevicedo@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 12:10:13 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/24 15:34:58 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/30 19:05:58 by marineviced      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* Alloue (avec malloc(3)) et retourne un tableau de chaînes de caractères
+obtenu en séparant ’s’ à l’aide du caractère ’c’, utilisé comme délimiteur.
+Le tableau doit être terminé par NULL
+s: La chaîne de caractères à découper.
+c: Le caractère délimiteur
+Valeurs de retour : Le tableau de nouvelles chaînes de caractères
+résultant du découpage. NULL si l’allocation échoue.
+Fonctions autorisees : malloc, free */
 
 #include <string.h>
 #include <stdlib.h>

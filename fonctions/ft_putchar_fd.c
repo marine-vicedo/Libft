@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: marinevicedo <marinevicedo@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 17:02:23 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/12 17:02:28 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/30 19:10:28 by marineviced      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* Écrit le caractère ’c’ sur le descripteur de fichier donné.
 c: Le caractère à écrire.
-fd: Le descripteur de fichier sur lequel écrire. */
+fd: Le descripteur de fichier sur lequel écrire.
+Fonction autorisee : write */
 
 #include "libft.h"
 

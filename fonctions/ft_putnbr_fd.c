@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marinevicedo <marinevicedo@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 17:36:14 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/25 17:03:34 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/30 19:09:57 by marineviced      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* Fonction autorisee : write */
 
 #include "libft.h"
 

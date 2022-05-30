@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: marinevicedo <marinevicedo@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 10:20:42 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/12 10:20:43 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/30 19:08:24 by marineviced      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@ Cette nouvelle chaîne commence à l’index ’start’ et a pour taille maxima
 s: La chaîne de laquelle extraire la nouvelle chaîne.
 start: L’index de début de la nouvelle chaîne dans la chaîne ’s’.
 len: La taille maximale de la nouvelle chaîne 
-Valeur de retour : La nouvelle chaîne de caractères. NULL si l’allocation échoue.*/
+Valeur de retour : La nouvelle chaîne de caractères. NULL si l’allocation échoue.
+Fonction autorisee : malloc */
 
 #include "libft.h"
 

@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: marinevicedo <marinevicedo@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:19:39 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/12 11:19:42 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/30 19:08:31 by marineviced      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* Alloue (avec malloc(3)) et retourne une nouvelle chaîne, résultat de la concaténation de s1 et s2.
 s1: La chaîne de caractères préfixe.
 s2: La chaîne de caractères suffixe.
-Valeur de retour : La nouvelle chaîne de caractères. NULL si l’allocation échoue. */
+Valeur de retour : La nouvelle chaîne de caractères. NULL si l’allocation échoue.
+Fonction autorisee : malloc */
 
 #include "libft.h"
 

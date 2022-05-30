@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marinevicedo <marinevicedo@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 10:43:44 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/24 14:55:41 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/30 19:07:55 by marineviced      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ passée en argument pour créer une nouvelle chaîne de caractères
 s: La chaîne de caractères sur laquelle itérer.
 f: La fonction à appliquer à chaque caractère.
 La chaîne de caractères résultant des applications successives de ’f’.
-Retourne NULL si l’allocation échoue.*/
+Retourne NULL si l’allocation échoue.
+Fonction autorisee : malloc */
 
 #include "libft.h"
 #include <string.h>

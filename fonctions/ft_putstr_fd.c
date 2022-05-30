@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: marinevicedo <marinevicedo@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 17:11:57 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/12 17:11:59 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/30 19:10:07 by marineviced      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* Écrit la chaîne de caractères ’s’ sur le descripteur de fichier donné.
 s: La chaîne de caractères à écrire.
 fd: Le descripteur de fichier sur lequel écrire.
-*/
+Fonction autorisee : write */
 
 #include "libft.h"
 

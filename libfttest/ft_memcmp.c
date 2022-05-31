@@ -6,7 +6,7 @@
 /*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:59:33 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/25 17:14:05 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/31 15:24:28 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-

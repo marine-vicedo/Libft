@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marinevicedo <marinevicedo@student.42.f    +#+  +:+       +#+         #
+#    By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 16:53:23 by mvicedo           #+#    #+#              #
-#    Updated: 2022/05/30 18:51:09 by marineviced      ###   ########.fr        #
+#    Updated: 2022/05/31 13:36:17 by mvicedo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,8 +56,8 @@ BONUS_SRC = ft_lstnew.c \
             ft_lstadd_back.c \
             ft_lstdelone.c \
             ft_lstclear.c \
-            ft_lstiter.c 
-            #ft_lstmap.c \#
+            ft_lstiter.c \
+            ft_lstmap.c
 
 
 BONUS_OBJ = $(BONUS_SRC:.c=.o)

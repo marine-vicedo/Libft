@@ -6,7 +6,7 @@
 /*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:55:43 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/25 17:13:49 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/05/31 15:23:58 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
-

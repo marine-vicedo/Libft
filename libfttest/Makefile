@@ -6,13 +6,9 @@
 #    By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 16:53:23 by mvicedo           #+#    #+#              #
-#    Updated: 2022/05/31 13:36:17 by mvicedo          ###   ########.fr        #
+#    Updated: 2022/06/01 12:39:00 by mvicedo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-NAME = libft.a
-
-CC = gcc -Wall -Wextra -Werror
 
 SRC = ft_atoi.c \
     ft_bzero.c \
@@ -49,6 +45,8 @@ SRC = ft_atoi.c \
     ft_strmapi.c \
     ft_striteri.c
 
+OBJ = $(SRC:.c=.o)
+
 BONUS_SRC = ft_lstnew.c \
             ft_lstadd_front.c \
             ft_lstsize.c \
@@ -62,18 +60,17 @@ BONUS_SRC = ft_lstnew.c \
 
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
-OBJ = $(SRC:.c=.o)
+CC = gcc -Wall -Wextra -Werror
+
+NAME = libft.a
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	ar rc $(NAME) $^
-
-%.o : %.c
-	$(CC) -c $^
+	ar rcs $(NAME) $^
 
 bonus : $(OBJ) $(BONUS_OBJ)
-	ar rc $(NAME) $^
+	ar rcs $(NAME) $^
 
 clean :
 	rm -f $(OBJ) $(BONUS_OBJ)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:21:26 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/17 17:26:26 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/06/01 19:09:52 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	i = 0;
 	if (!d && !s)
 		return (NULL);
-	if (d > s)
+	if (d > s) // d > s si d[indice_array] > s[indice_array]
 	{
 		while (n > 0)
 		{
@@ -49,7 +49,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	return ((void *) d);
 }
 
-/*void print_elements(char *array, int size)
+void print_elements(char *array, int size)
 {
   int i;
   printf ("Elements : ");
@@ -64,9 +64,9 @@ int main(void)
     char c_array[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
     print_elements(c_array, sizeof(c_array));
     printf("After memmove()\n");
-    ft_memmove((void *)&c_array[5], (void *)&c_array[3], 5);
+    ft_memmove((void *)&c_array[3], (void *)&c_array[5], 5); // ici d < s
     print_elements(c_array, sizeof(c_array)); 
 
   return (0);
 }
-*/
+

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 16:19:15 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/13 16:45:39 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/06/01 19:09:55 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ we put the type inside parentheses, as in (char *)
 and place it immediately before the item we want to cast*/
 
 #include "libft.h"
+#include <string.h>
 
 void	*ft_memset(void *s, int c, size_t n)
 {
@@ -38,15 +39,15 @@ void	*ft_memset(void *s, int c, size_t n)
 	return ((void *)s1);
 }
 
-/*int main(void)
+int main(void)
 {
-    char str[50] = "Il est dix-sept heures";
+    char str[25] = "Il est dix-sept-heures";
     printf("Before memset():%s\n", str);
 
-    memset(str + 10, '.', 2*sizeof(char));
+    memset(str + 30, '.', 2*sizeof(char));
     printf("After memset():  %s\n", str);
 
-    ft_memset(str + 10, '.', 2*sizeof(char));
+    ft_memset(str + 30, '.', 2*sizeof(char));
     printf("After ft_memset():  %s\n", str);
     return 0;
-}*/
+}

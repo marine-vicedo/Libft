@@ -6,13 +6,9 @@
 #    By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 16:53:23 by mvicedo           #+#    #+#              #
-#    Updated: 2022/05/31 17:22:48 by mvicedo          ###   ########.fr        #
+#    Updated: 2022/06/01 14:42:34 by mvicedo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-NAME = libft.a
-
-CC = gcc -Wall -Wextra -Werror
 
 SRC = ft_atoi.c \
     ft_bzero.c \
@@ -49,6 +45,8 @@ SRC = ft_atoi.c \
     ft_strmapi.c \
     ft_striteri.c
 
+OBJ = $(SRC:.c=.o)
+
 BONUS_SRC = ft_lstnew.c \
             ft_lstadd_front.c \
             ft_lstsize.c \
@@ -62,25 +60,28 @@ BONUS_SRC = ft_lstnew.c \
 
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
-OBJ = $(SRC:.c=.o)
+CC = gcc -Wall -Wextra -Werror
+
+NAME = libft.a
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	ar rc $(NAME) $^
-
-%.o : %.c
-	$(CC) -c $^
+	ar rcs $(NAME) $(OBJ)
+    # -s est equivalent a ranlib - replace create sorts
 
 bonus : $(OBJ) $(BONUS_OBJ)
-	ar rc $(NAME) $^
+	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
 
 clean :
 	rm -f $(OBJ) $(BONUS_OBJ)
+    #clean les fichiers objets
 
 fclean : clean
 	rm -f $(NAME)
+    #clean les fichiers objets et la libft.a
 
 re : fclean all
+#clean et compile again
 
-.PHONY : all bonus clean fclean re #gere les fichers homonyme#
+.PHONY : all bonus clean fclean re #la commande .PHONY indique qu compilateur que ces cibles ne dependent d'aucun fichier /permet de gerer les cas ou des fichiers homonymes (exemple : fichier clean dans le directory) sont presents dans le directory

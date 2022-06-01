@@ -6,7 +6,7 @@
 /*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:32:04 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/25 16:03:00 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/06/01 19:00:11 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,17 @@ char    *ft_strchr(const char *s, int c)
             return ((char *)&s[i]);
         i++;
     }
-    if(s[i] == (char)c) // if s[i] == '\0'
-        return ((char *)&s[i]); 
-	
-    return (0);
+   if(s[i] == (char)c) // if s[i] == '\0' car on doit retourner le null sinon segfault
+        return ((char *)&s[i]);
+    return (NULL); // pas return 0
 }
 
 int main(void)
 {
     const char    *s1 = "ripouille";
 
-    //printf("%s\n", strchr(s1, 't'));
-    printf("%s\n", ft_strchr(s1, 'a'));
+    printf("%s\n", strchr(s1, 'a'));
+    //printf("%s\n", ft_strchr(s1, 'a'));
 
     return 0;
 }

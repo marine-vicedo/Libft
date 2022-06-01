@@ -6,7 +6,7 @@
 /*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 12:14:03 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/31 15:03:27 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/06/01 11:20:02 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,3 +19,4 @@ t_list	*ft_lstlast(t_list *lst)
 	while (lst->next != NULL)
 		lst = lst->next;
 	return (lst);
+}

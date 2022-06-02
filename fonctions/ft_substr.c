@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marinevicedo <marinevicedo@student.42.f    +#+  +:+       +#+        */
+/*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 10:20:42 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/30 19:08:24 by marineviced      ###   ########.fr       */
+/*   Updated: 2022/06/02 12:39:40 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,14 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
 	    
 	    i = 0;
 	    j = 0;
-	    slen = ft_strlen(s);
+	    slen = ft_strlen(s); //lenght de notre chaine s (src)
 	    
 	    if (s == 0)
 	    	return (NULL);
-	    if (start > slen)
-		len = 0;
-	    else if (len + start > slen)
-		len = slen - start;
+	    if (start > slen) //si le start est apres le dernier caractere de la src a copier >> len = 0 donc on copie rien
+			len = 0;
+	    else if (len + start > slen) 
+			len = slen - start;
 	    res = (char*)malloc(sizeof(char) * (len + 1));
 	    if (res == 0)
 	        return (NULL);
@@ -63,10 +63,10 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
 	    return (res);
 	}
 
-/*int main(void)
+int main(void)
 {
-    char s1[] = "1";
+    char s1[] = "lorem ipsum";
 
-    printf("%s\n", ft_substr(s1, 42, 42000000));
+    printf("%s\n", ft_substr(s1, 2, 1));
     return (0);
-}*/
+}

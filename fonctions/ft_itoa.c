@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marinevicedo <marinevicedo@student.42.f    +#+  +:+       +#+        */
+/*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:28:32 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/30 19:07:29 by marineviced      ###   ########.fr       */
+/*   Updated: 2022/06/02 12:28:23 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static long	ft_nbrlen(long nbr)
 	}
 	while (nbr > 0)
 	{
-		nbr /= 10;
+		nbr /= 10; // nbr = nbr / 10 => on va diviser le nbr en centaines dizaine, unite, etc pour connaitre la longueur. Ex : 1234 / 123 / 12 / 1 == Len ++.. len = 4
 		len++;
 	}
 	return (len);
@@ -67,8 +67,8 @@ char	*ft_itoa(int n)
 	}
 	while (nbr > 0)
 	{
-		res[--len] = nbr % 10 + 48;
-		nbr /= 10;
+		res[--len] = nbr % 10 + 48; // on commence par la fin. ex 1234 => on remplit avec 1234 % 10 = 4, puis on divise par 10 et 123 % 10 = 3...
+		nbr /= 10; // nbr = nbr / 10
 	}
 	return (res);
 }

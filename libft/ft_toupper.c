@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/12 17:02:23 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/06/02 12:38:11 by mvicedo          ###   ########.fr       */
+/*   Created: 2022/05/10 15:07:00 by mvicedo           #+#    #+#             */
+/*   Updated: 2022/05/25 14:25:59 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Écrit le caractère ’c’ sur le descripteur de fichier donné.
-c: Le caractère à écrire.
-fd: Le descripteur de fichier sur lequel écrire. pour write on utilise d'hab fd = 1 pour pouvoir ecrire sur la sortie standard
-Fonction autorisee : write */
-
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+int	ft_toupper(int c)
 {
-    write(fd, &c, 1);
+	if (c >= 97 && c <= 122)
+		c -= 32;
+	return (c);
 }
-
-/*int main(void)
-{
-    char c  = 'a';
-    int fd = 2;
-
-    ft_putchar_fd(c, fd);
-    return (0);
-}*/

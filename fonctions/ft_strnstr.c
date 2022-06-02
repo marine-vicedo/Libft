@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvicedo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:26:46 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/11 14:26:47 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/06/02 12:39:42 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,31 @@ otherwise a pointer to the first character of the first occurrence of little is 
 */
 
 #include "libft.h"
-//#include <bsd/string.h>
+#include <string.h>
+
+size_t	ft_strlen(const char *s)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+int ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+    size_t  i;
+
+    i = 0;
+	while ((s1[i] || s2[i]) && (i < n))
+	{
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
+	}
+	return (0);
+}
 
 char *ft_strnstr(const char *big, const char *little, size_t len)
 {   
@@ -34,7 +58,7 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
 
     while (*big && i < len)
     {
-        if (ft_strncmp(((char *)big + i), little, ft_strlen(little)) == 0)
+        if (ft_strncmp(((char *)big + i), little, ft_strlen(little)) == 0) // *(big + i) == big[i]
 		{
 			if (i + ft_strlen(little) > len)
 				return (NULL);
@@ -45,13 +69,13 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
 	return (NULL);
 }
 
-/*int main(void)
+int main(void)
 {
-	char big[30] = "aaabcabcd";
-	//char little[10] = "aabc";
+	char big[30] = "bonjourno";
+	char little[10] = "jour";
 
-    printf("resultat vraie fonction : %s\n", strnstr(big, "abcd", 10));
-    //printf("ma fonction : %s\n", ft_strnstr(big, "abcd", 9));
+    //printf("resultat vraie fonction : %s\n", strnstr(big, little, 2));
+    printf("ma fonction : %s\n", ft_strnstr(big, little, 6));
 
     return 0;
-}*/
+}

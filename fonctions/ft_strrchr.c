@@ -6,7 +6,7 @@
 /*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:08:05 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/05/25 15:10:31 by mvicedo          ###   ########.fr       */
+/*   Updated: 2022/06/02 12:39:50 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char    *ft_strrchr(const char *s, int c)
 {
     char *str;
 
-    str = (char *)s;
+    str = (char *)s; //on cast dans une variable temp
 
     while (*str)
         str++;
@@ -29,7 +29,7 @@ char    *ft_strrchr(const char *s, int c)
     if ((char)c == 0)
         return ((char *)str);
 
-    while (str > s)
+    while (str > s) //on decremente la variable temp
     {
         str--;
         if(*str == (char)c)

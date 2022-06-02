@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/12 17:02:23 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/06/02 12:38:11 by mvicedo          ###   ########.fr       */
+/*   Created: 2022/05/12 17:36:14 by mvicedo           #+#    #+#             */
+/*   Updated: 2022/05/25 17:03:34 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Écrit le caractère ’c’ sur le descripteur de fichier donné.
-c: Le caractère à écrire.
-fd: Le descripteur de fichier sur lequel écrire. pour write on utilise d'hab fd = 1 pour pouvoir ecrire sur la sortie standard
-Fonction autorisee : write */
-
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-    write(fd, &c, 1);
+	if (n == -2147483648)
+		write(fd, "-2147483648", 11);
+	else if (n < 0)
+	{	
+		write(fd, "-", 1);
+		n = -n;
+		ft_putnbr_fd(n, fd);
+	}
+	else if (n >= 0 && n <= 9)
+		ft_putchar_fd((n + '0'), fd);
+	else
+	{
+		ft_putnbr_fd((n / 10), fd);
+		ft_putnbr_fd((n % 10), fd);
+	}
 }
-
-/*int main(void)
-{
-    char c  = 'a';
-    int fd = 2;
-
-    ft_putchar_fd(c, fd);
-    return (0);
-}*/

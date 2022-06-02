@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/12 17:02:23 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/06/02 12:38:11 by mvicedo          ###   ########.fr       */
+/*   Created: 2022/05/10 17:05:28 by mvicedo           #+#    #+#             */
+/*   Updated: 2022/05/25 14:08:38 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Écrit le caractère ’c’ sur le descripteur de fichier donné.
-c: Le caractère à écrire.
-fd: Le descripteur de fichier sur lequel écrire. pour write on utilise d'hab fd = 1 pour pouvoir ecrire sur la sortie standard
-Fonction autorisee : write */
-
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    write(fd, &c, 1);
+	size_t	i;
+
+	i = 0;
+	while ((s1[i] || s2[i]) && (i < n))
+	{
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
+	}
+	return (0);
 }
-
-/*int main(void)
-{
-    char c  = 'a';
-    int fd = 2;
-
-    ft_putchar_fd(c, fd);
-    return (0);
-}*/

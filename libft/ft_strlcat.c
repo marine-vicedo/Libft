@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvicedo <mvicedo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/12 17:02:23 by mvicedo           #+#    #+#             */
-/*   Updated: 2022/06/02 12:38:11 by mvicedo          ###   ########.fr       */
+/*   Created: 2022/05/10 11:52:18 by mvicedo           #+#    #+#             */
+/*   Updated: 2022/05/25 14:04:39 by mvicedo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Écrit le caractère ’c’ sur le descripteur de fichier donné.
-c: Le caractère à écrire.
-fd: Le descripteur de fichier sur lequel écrire. pour write on utilise d'hab fd = 1 pour pouvoir ecrire sur la sortie standard
-Fonction autorisee : write */
-
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-    write(fd, &c, 1);
+	size_t	i;
+	size_t	dst_len;
+	size_t	src_len;
+
+	i = 0;
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	if (size == 0 || size <= dst_len)
+		return (src_len + size);
+	while (src[i] && (i + dst_len) < size - 1)
+	{
+		dst[i + dst_len] = src[i];
+		i++;
+	}
+	dst[i + dst_len] = '\0';
+	return (dst_len + src_len);
 }
-
-/*int main(void)
-{
-    char c  = 'a';
-    int fd = 2;
-
-    ft_putchar_fd(c, fd);
-    return (0);
-}*/

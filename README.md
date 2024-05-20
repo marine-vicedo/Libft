@@ -23,4 +23,5 @@ The mandatory part of the project requires implementing 34 functions that cover 
 To compile the library, use the following commands:
 
 ```make``` – Compiles the mandatory functions.
+
 ```make bonus``` – Compiles the library including the bonus functions.
